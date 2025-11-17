@@ -452,23 +452,23 @@ export default function BroadcastArchivePortfolio() {
                 <h3 className="text-xl font-bold text-[#ff6b35] mb-4 display-font">EXPERTISE</h3>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>Documentary Filmmaking</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>Commercial Production</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>Audio Engineering & Mixing</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>Cinematography & Lighting</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>Post-Production & Color Grading</span>
                   </li>
                 </ul>
@@ -478,19 +478,19 @@ export default function BroadcastArchivePortfolio() {
                 <h3 className="text-xl font-bold text-[#ff6b35] mb-4 display-font">TOOLS</h3>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>Adobe Premiere Pro / DaVinci Resolve</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>Pro Tools / Logic Pro X</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>After Effects / Motion Graphics</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="text-[#ff6b35]">></span>
+                    <span className="text-[#ff6b35]">{'>'}</span>
                     <span>Cinema Cameras & Professional Audio Gear</span>
                   </li>
                 </ul>
