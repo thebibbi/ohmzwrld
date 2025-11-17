@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OHMZWRLD Portfolio - Design Comparison</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f0f;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: #888;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .design-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .design-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .design-preview {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .preview-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .design-content {
+            padding: 32px;
+        }
+        
+        .design-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .design-tagline {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .design-description {
+            margin-bottom: 24px;
+            color: #bbb;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+        
+        .best-for {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .best-for-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .best-for-text {
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+        
+        .color-palette {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            border: 1px solid #444;
+        }
+        
+        .view-button {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: #fff;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .view-button:hover {
+            background: #e0e0e0;
+            transform: scale(1.02);
+        }
+        
+        .notes-section {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 60px;
+        }
+        
+        .notes-section h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+        
+        .notes-section p {
+            color: #bbb;
+            margin-bottom: 16px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            color: #aaa;
+        }
+        
+        .highlight {
+            color: #4ade80;
+            font-weight: 600;
+        }
+        
+        /* Color-specific styles */
+        .broadcast .design-title { color: #ff6b35; }
+        .studio .design-title { color: #d4af37; }
+        .cinema .design-title { color: #888; }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OHMZWRLD Portfolio Designs</h1>
+            <p class="subtitle">Three Distinct Aesthetics for Audio-Visual Excellence</p>
+        </header>
+        
+        <div class="comparison-grid">
+            <!-- Broadcast Archive -->
+            <div class="design-card broadcast">
+                <div class="design-preview" style="background: linear-gradient(135deg, #1a1612 0%, #2d2418 100%);">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; font-family: monospace; color: #ff6b35; font-size: 4rem; font-weight: bold;">
+                        [ REC ]
+                    </div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">BROADCAST ARCHIVE</h3>
+                    <p class="design-tagline">"Vintage broadcast meets modern production"</p>
+                    
+                    <div class="color-palette">
+                        <div class="color-swatch" style="background: #ff6b35;"></div>
+                        <div class="color-swatch" style="background: #1a1612;"></div>
+                        <div class="color-swatch" style="background: #f5e6d3;"></div>
+                    </div>
+                    
+                    <p class="design-description">
+                        Bold, retro aesthetic inspired by vintage broadcast graphics and VHS aesthetics. 
+                        Features film grain, scanlines, and timecode displays for a technical, archival feel.
+                    </p>
+                    
+                    <ul class="feature-list">
+                        <li>Film grain & scanline overlays</li>
+                        <li>VHS tracking effects on hover</li>
+                        <li>Countdown circle animations</li>
+                        <li>Monospace typography (Courier Prime)</li>
+                        <li>Technical/broadcast terminology</li>
+                    </ul>
+                    
+                    <div class="best-for">
+                        <div class="best-for-title">Best For</div>
+                        <div class="best-for-text">
+                            Standing out dramatically • Tech-savvy clients • Experimental work • 
+                            Unconventional brand positioning
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <span class="badge">High Impact</span>
+                        <span class="badge">Retro Cool</span>
+                        <span class="badge">Technical</span>
+                    </div>
+                    
+                    <a href="#" class="view-button">View Broadcast Archive</a>
+                </div>
+            </div>
+            
+            <!-- Studio Dark -->
+            <div class="design-card studio">
+                <div class="design-preview" style="background: linear-gradient(135deg, #0a0e1a 0%, #12172e 100%);">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #d4af37;">
+                        <svg width="120" height="80" viewBox="0 0 120 80">
+                            <path d="M10,40 Q20,20 30,40 T50,40 T70,40 T90,40 T110,40" 
+                                  stroke="#d4af37" 
+                                  stroke-width="3" 
+                                  fill="none"
+                                  opacity="0.6"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">STUDIO DARK</h3>
+                    <p class="design-tagline">"Intimate recording studio atmosphere"</p>
+                    
+                    <div class="color-palette">
+                        <div class="color-swatch" style="background: #d4af37;"></div>
+                        <div class="color-swatch" style="background: #0a0e1a;"></div>
+                        <div class="color-swatch" style="background: #e8dcc4;"></div>
+                    </div>
+                    
+                    <p class="design-description">
+                        Professional, warm aesthetic inspired by recording studios. Features waveform 
+                        visualizations, gold accents, and sophisticated typography for audio-first presentation.
+                    </p>
+                    
+                    <ul class="feature-list">
+                        <li>Real-time waveform animations</li>
+                        <li>Studio "REC" light indicators</li>
+                        <li>Audio equalizer bar animations</li>
+                        <li>Warm gold gradient effects</li>
+                        <li>Editorial serif typography (Crimson Text)</li>
+                    </ul>
+                    
+                    <div class="best-for">
+                        <div class="best-for-title">Best For</div>
+                        <div class="best-for-text">
+                            Audio engineering focus • Music industry clients • Premium commercial work • 
+                            Professional yet creative balance
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <span class="badge">Sophisticated</span>
+                        <span class="badge">Audio-First</span>
+                        <span class="badge">Premium</span>
+                    </div>
+                    
+                    <a href="#" class="view-button">View Studio Dark</a>
+                </div>
+            </div>
+            
+            <!-- Cinema Verite -->
+            <div class="design-card cinema">
+                <div class="design-preview" style="background: linear-gradient(135deg, #fafafa 0%, #e0e0e0 100%);">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #1a1a1a; font-size: 3rem; font-style: italic; font-family: serif;">
+                        Truth
+                    </div>
+                </div>
+                <div class="design-content">
+                    <h3 class="design-title">CINÉMA VÉRITÉ</h3>
+                    <p class="design-tagline">"Documentary authenticity meets editorial design"</p>
+                    
+                    <div class="color-palette">
+                        <div class="color-swatch" style="background: #1a1a1a;"></div>
+                        <div class="color-swatch" style="background: #fafafa;"></div>
+                        <div class="color-swatch" style="background: #888;"></div>
+                    </div>
+                    
+                    <p class="design-description">
+                        High-contrast black and white foundation with editorial sophistication. 
+                        Inspired by documentary film festivals and authentic storytelling.
+                    </p>
+                    
+                    <ul class="feature-list">
+                        <li>Grayscale-to-color transitions</li>
+                        <li>Film texture & grain overlays</li>
+                        <li>Custom cursor follow effect</li>
+                        <li>Festival badge displays</li>
+                        <li>Editorial serif typography (Fraunces)</li>
+                    </ul>
+                    
+                    <div class="best-for">
+                        <div class="best-for-title">Best For</div>
+                        <div class="best-for-text">
+                            Documentary filmmakers • Festival submissions • Film industry professionals • 
+                            Authentic storytelling emphasis
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <span class="badge">Authentic</span>
+                        <span class="badge">Editorial</span>
+                        <span class="badge">Film Festival</span>
+                    </div>
+                    
+                    <a href="#" class="view-button">View Cinéma Vérité</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <h2>Implementation Notes</h2>
+            
+            <p>
+                <span class="highlight">All three designs are production-ready</span> and built with React. 
+                Each includes:
+            </p>
+            
+            <ul class="feature-list" style="margin-left: 0;">
+                <li>Fully responsive design (mobile, tablet, desktop)</li>
+                <li>Smooth scroll animations and transitions</li>
+                <li>Project filtering by category</li>
+                <li>Modal popups for detailed project views</li>
+                <li>Contact form integration ready</li>
+                <li>Video embed placeholders</li>
+                <li>Single-page application structure</li>
+            </ul>
+            
+            <p style="margin-top: 24px;">
+                <strong>Next Steps:</strong> Choose one design, customize the content with real projects 
+                and information, add video embeds, and deploy to your preferred hosting platform 
+                (Vercel, Netlify, etc.).
+            </p>
+            
+            <p>
+                Each design is built to avoid generic "AI slop" aesthetics through:
+                <span class="highlight">distinctive typography choices</span>, 
+                <span class="highlight">cohesive color schemes</span>, 
+                <span class="highlight">meaningful animations</span>, and 
+                <span class="highlight">atmospheric backgrounds</span> that create genuine character.
+            </p>
+            
+            <p style="margin-top: 24px; color: #666; font-size: 0.9rem;">
+                📁 Files: broadcast-archive.jsx | studio-dark.jsx | cinema-verite.jsx<br>
+                📖 Full documentation: PORTFOLIO_GUIDE.md
+            </p>
+        </div>
+    </div>
+</body>
+</html>
